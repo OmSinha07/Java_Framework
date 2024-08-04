@@ -1,0 +1,43 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- bean definitions here -->
+
+
+<!--<bean id="Alien1" class="org.example.Alien" scope="prototype"></bean>-->
+    <bean id="Alien1" class="org.example.Alien" autowire="byName">
+<!--        <constructor-arg value="21"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+
+<!--        <constructor-arg type="org.example.Laptop" ref="lap1"/>-->
+<!--        <constructor-arg type="int" value="21"/>-->
+<!--
+        best way-->
+<!--        <constructor-arg index="1" ref="lap1"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
+
+<!--                <constructor-arg name="age" value="21"/>-->
+<!--                <constructor-arg name="lap" ref="lap1"/>-->
+
+
+        <property name="age" value="21"></property>  <!---primitive value-->
+        <property name="com">
+            <bean id="com1" class="org.example.Laptop" primary="true">
+
+            </bean>
+
+        </property> <!--refrence type value-->
+</bean>
+<!--    <bean id="com1" class="org.example.Laptop" primary="true">-->
+
+<!--    </bean>-->
+
+<!--    <bean id="com2" class="org.example.Dekstop" lazy-init="true" >-->
+
+<!--    </bean>-->
+</beans>
